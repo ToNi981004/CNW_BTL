@@ -1,0 +1,162 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <body>
+       
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">Thêm Mới Sản Phẩm</h1>
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <!-- /.row -->
+                    <form method="post" action="/SanPham/Create" enctype = "multipart/form-data">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="form-group">
+
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ảnh:</font></font></label>
+                                            <input type="file" class="form-control"  name="fileUpLoad" required>
+                                            
+
+                                        </div>
+                                    </div>
+                                    <!-- /.panel-heading -->
+                                    <div class="panel-body">
+
+                                    </div>
+                                    <!-- .panel-body -->
+                                </div>
+                                <!-- /.panel -->
+                            </div>
+                            <!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+
+                                        <div>
+                                            <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fa fa-save"></i>   Lưu</button>
+
+                                        </div>
+
+                                    </div>
+                                    <!-- /.panel-heading -->
+                                    <div class="panel-body">
+
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ID Sản Phẩm:</font></font></label>
+                                            <input class="form-control" placeholder="ID Sản Phẩm" name="IDSanPham" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tên Sản Phẩm:</font></font></label>
+                                            <input class="form-control" placeholder="Tên Sản Phẩm" name="TenSanPham">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đơn Vị Tính:</font></font></label>
+                                            <input class="form-control" placeholder="Đơn vị tính" name="DVT">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Số Lượng Tồn:</font></font></label>
+                                            <input class="form-control" placeholder="số lượng tồn" name="SoLuongTon">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đơn Giá Nhập:</font></font></label>
+                                            <input class="form-control" placeholder="Đơn giá nhập" name="DonGiaN">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đơn Giá Bán:</font></font></label>
+                                            <input class="form-control" placeholder="Đơn giá bán" name="DonGiaB">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thời Gian Bảo Hành:</font></font></label>
+                                            <input class="form-control" placeholder="thời gian bảo hành" name="TGBaoHanh">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nhà Cung Cấp:</font></font></label>
+                                            <input class="form-control" placeholder="thời gian bảo hành" name="IDNCC">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hãng:</font></font></label>
+                                            <input class="form-control" placeholder="Hãng" name="Hang">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Xuất Xứ:</font></font></label>
+                                            <input class="form-control" placeholder="xuất xứ" name="XuatXu">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Màn Hình:</font></font></label>
+                                            <input class="form-control" placeholder="màn hình" name="MaHinh">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hệ Điều Hành:</font></font></label>
+                                            <input class="form-control" placeholder="hệ diề hành" name="HeDieuHanh">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Camera Sau:</font></font></label>
+                                            <input class="form-control" placeholder="camera sau" name="CameraSau">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Camera Truoc:</font></font></label>
+                                            <input class="form-control" placeholder="camera truoc" name="CameraTruoc">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CPU:</font></font></label>
+                                            <input class="form-control" placeholder="cpu" name="CPU">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RAM:</font></font></label>
+                                            <input class="form-control" placeholder="ram" name="RAM">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bo Nho Trong:</font></font></label>
+                                            <input class="form-control" placeholder="bo nho trong" name="BoNhoTrong">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The Sim:</font></font></label>
+                                            <input class="form-control" placeholder="SIM" name="TheSim">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dung Lượng Pin:</font></font></label>
+                                            <input class="form-control" placeholder="dung lượng pin" name="DungLuongPin">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thiết Kế:</font></font></label>
+                                            <input class="form-control" placeholder="Thiết kế" name="ThietKe">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tình Trạng:</font></font></label>
+                                            <input class="form-control" placeholder="tình trạng" name="TinhTrang">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mô Tả Sản Phẩm</font></font></label>
+                                            <textarea class="form-control" rows="3" name="MoTaSanPham"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <!-- .panel-body -->
+                                </div>
+                                <!-- /.panel -->
+                            </div>
+                            <!-- /.col-lg-6 -->
+                        </div>
+                    </form>
+
+                    <!-- /.row -->
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+        
+        </body>
+
+
+
+

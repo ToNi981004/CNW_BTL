@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "DangKiTaiKhoan";
+    Layout = "~/Views/Shared/_LayoutDangKiTK.cshtml";
+}
+    <body>
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Đăng Kí Tài Khoản</h1>
+                        @*Biểu tượng người*@
+                    </div>
+                    <div class="hero-widget well well-sm">
+                        <div class="icon">
+                            <i class="fa fa-github-alt"></i>
+                        </div>
+                        <div class="text">
+                            <span class="value"></span>
+                            <a class="btn btn-block btn-social btn-bitbucket">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">
+                                        @TempData["msg"]
+                                    </font>
+                                </font>
+                            </a>
+                        </div>
+                        <div class="text">
+                            <span class="value"></span>
+                            <a class="btn btn-block btn-social btn-bitbucket">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">
+                                        @TempData["msg1"]
+                                    </font>
+                                </font>
+                            </a>
+                        </div>
+
+                    </div>
+                    <form method="post" action="/My/KiemTraTK_MK">
+                        @*Đổi Mật Khẩu*@
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <i class="fa fa-edit"></i>    Thông Tin
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nhập văn bản</font></font></label>
+                                    <input class="form-control" name="Ten">
+                                    <p class="help-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="fa fa-exclamation-triangle"></i>     Chú Ý: tên tài khỏan không quá 10 ký tự!</font></font></p>
+                                </div>
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mật Khẩu:</font></font></label>
+                                    <input class="form-control" placeholder="new password" name="MK1">
+                                </div>
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nhập Lại Mật Khẩu:</font></font></label>
+                                    <input class="form-control" placeholder="password again" name="MK2">
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-outline btn-primary btn-lg btn-block"><font style="vertical-align: inherit;"> <font style="vertical-align: inherit;"><i class="fa fa-save"></i>    Lưu</font></font></button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </form>
+                    @*Thông Tin người dùng*@
+
+
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+    </body>
+        
+

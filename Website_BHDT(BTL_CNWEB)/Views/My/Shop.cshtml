@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Website_BHDT_BTL_CNWEB_.Models.MD_Entities;
+@model  List<SanPham>
+<body>
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/My/Index"><i class="fa fa-home"></i></a></li>
+                        <li class="active"><a href="/My/Shop">Danh Sách Sản Phẩm</a></li>
+                        <li><a href="/My/SingleProduct">Thông Tin Chi Tiết Sản Phẩm</a></li>
+                        <li><a href="/My/Cart">Giỏ Hàng</a></li>
+                        <li><a href="/My/Information">Thông Tin Giao Hàng</a></li>
+                        <li><a href="/My/Contacts">Liên Hệ</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2><b>Danh Sách Sản Phẩm</b></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                @foreach (SanPham sp in Model)
+                {
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+
+                            <img src="@sp.Anh" alt="">
+                        </div>
+                        <h2><a href="/My/SingleProduct/?ID=@sp.IDSanPham">@sp.TenSanPham</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>@sp.DonGiaN</ins> <del>@sp.DonGiaB</del>
+                        </div>
+
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/My/Cart">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+               }
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-pagination text-center">
+                        <nav>
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brands-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="brand-wrapper">
+                        <div class="brand-list">
+                            <a href="/My/Shop/?IDNCC=NCC01">
+                                <img src="/Content/img/brand1.png" alt="">
+                            </a>
+                            <a href="/My/Shop/?IDNCC=NCC02">
+                                <img src="/Content/img/brand3.png" alt="">
+                            </a>
+                            <a href="/My/Shop/?IDNCC=NCC03">
+                                <img src="/Content/img/brand4.png" alt="">
+                            </a>
+                            <a href="/My/Shop/?IDNCC=NCC04">
+                                <img src="/Content/img/brand5.png" alt="">
+                            </a>
+                            <a href="/My/Shop/?IDNCC=NCC05">
+                                <img src="/Content/img/brand6.png" alt="">
+                            </a>
+                            <a href="/My/Shop/?IDNCC=NCC06">
+                                <img src="/Content/img/brand5.png" alt="">>
+                            </a>
+                            <a href="/My/Shop/?IDNCC=NCC07">
+                                <img src="/Content/img/brand1.png" alt="">
+                            </a>
+                            <a href="/My/Shop/?IDNCC=NCC08">
+                                <img src="/Content/img/brand2.png" alt="">
+                            </a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

@@ -1,0 +1,226 @@
+﻿
+@{
+    ViewBag.Title = "DatabaseDocumentation";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Tài Liệu Cơ Sở Dữ Liệu</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-badge">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title"> <b>Bước 1. Xác Định lược đồ quan hệ:</b></h4>
+
+                                
+                                </div>
+                                <div class="timeline-body">
+                                    <p>
+                                       <br />
+
+                                        HoaDon( IDHoaDon,NgayHD,IDKhachHang,IDSanPham,SoLuongB,DonGiaB,TGBaoHanh,
+                                        IDNV)
+                                        KhachHang( IDKhachHang,TenKH,SDT_KH,DiaChi_KH )
+                                        SanPham( IDSanPham,ĐVT,SoLuongTon,DonGia,TGBaoHanh,IDNCC )
+                                        NhanVien( IDNV,TenNV,ChucVu )
+                                        NhaCungCap( IDNCC,TenNCC,DiaChi_NCC,SDT_NCC )
+                                        PhieuNhap( IDPN,NgayNhap,IDSanPham,SoLuongN, IDNV, GiaNhap )
+
+
+
+
+
+
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-badge warning">
+                                <i class="fa fa-credit-card"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title"><b>Bước 2. Xác Định phụ thuộc hàm của từng quan hệ:</b></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>
+                                        <br />
+
+
+                                        HoaDon( IDHoaDon,NgayHD,IDKhachHang,IDSanPham,SoLuongB,DonGiaB,TGBaoHanh,
+                                        IDNV )
+                                        IDHoaDon  NgayHD,IDKhachHang,IDNV,SoLuongB
+                                        IDHoaDon,IDSanPham  DonGiaBan,ThoiGianBaoHanh
+                                        KhachHang( IDKhachHang,TenKH,SDT_KH,DiaChi_KH )
+                                        IDKachHang  TenKH,SDT_KH,DiaChi_KH
+                                        NhanVien( IDNV,TenNV,ChucVu )
+                                        IDNV  TenNV,ChucVu
+                                        NhaCungCap( IDNCC,TenNCC,DiaChi_NCC,SDT_NCC )
+                                        IDNCC  TenNCC,DiaChi_NCC,SDT_NCC
+                                        PhieuNhap( IDPN,NgayNhap,IDSanPham,SoLuongN, IDNV, GiaNhap )
+                                        IDPN  NgayNhap,SoLuongN,IDNV
+                                        IDPN,IDSanPham  GiaNhap
+                                    </p>
+
+                                   
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-badge danger">
+                                <i class="fa fa-bomb"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title"><b>Bước 3. Chuẩn Hóa Lược Đồ Quan Hệ :</b></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>
+
+                                        <br />
+
+
+                                        HoaDon(IDHoaDon,NgayHD,IDKhachHang,IDSanPham,SoLuongB,DonGiaB,TGBaoHanh,IDNV )
+
+                                        IDHoaDon  NgayHD,IDKhachHang,IDNV,SoLuongB
+                                        IDHoaDon,IDSanPham  DonGiaBan,ThoiGianBaoHanh
+
+                                        Ta thấy : Do tồn tại thuộc tính lặp( IDSanPham,DonGiaB,TGBaoHanh,SoLuong ) thì lược đồ HoaDon chưa thuộc dạng chuẩn NF1, Nên ta tách HoaDon thành 2 lược đồ như sau .
+
+                                        HoaDon( IDHoaDon,NgayHD,IDKhachHang,IDNV )
+                                        HoaDonChiTiet(IDSanPham,IDHoaDon,SoLuong,DonGiaB,TGBaoHanh)
+
+
+                                        Sau Khi tách thì ta thấy :   HoaDon ∈ BCNF
+                                        HoaDonChiTiet ∈ BCNF
+                                        VÌ :
+                                        + vì cả 2 không tồn tại thuộc tính lặp	∈ 1NF
+                                        + không có thuộc tính đa trị
+
+                                        + ∈ 1NF	∈ 2NF
+                                        + không tồn tại phụ thuộc hàm vào 1 phần của khóa
+
+                                        + ∈ 2NF	∈ 3NF
+                                        + Không tồn tại phụ thuộc hàm có nguồn,đích là thuộc tính không khóa
+
+                                        + 3NF	∈ BCNF
+                                        + Tồn tại phụ thuộc hàm có nguồn là thuộc tính không khóa và đích là
+                                        thuộc tính khóa
+                                        PhieuNhap( IDPN,NgayNhap,IDSanPham,SoLuongN, IDNV, GiaNhap )
+                                        IDPN  NgayNhap,SoLuongN,IDNV
+                                        IDPN,IDSanPham  GiaNhap
+                                        Ta thấy : Do tồn tại thuộc tính lặp( IDSanPham,GiaNhap,SoLuong ) thì lược đồ HoaDon chưa thuộc dạng chuẩn NF1, Nên ta cũng tách PhieuNhap thành 2 lược đồ như sau.
+                                        ChiTietPN(IDSanPham,IDPN,GiaNhap,SoLuong)
+                                        PhieuNhap(IDPN,NgayNhap,IDNV)
+                                        Sau khi tách ta thấy cả 2 PhieuNhap và ChiTietPN đều ∈ BCNF
+                                        KhachHang( IDKhachHang,TenKH,SDT_KH,DiaChi_KH ) dễ thấy là lược đồ KhachHang ∈ BCNF
+                                        NhanVien( IDNV,TenNV,ChucVu ) ∈ BCNF
+                                        NhaCungCap( IDNCC,TenNCC,DiaChi_NCC,SDT_NCC ) ∈ BCNF
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title"><b>Mô Hình Thực Thể</b></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <img src="~/Content/img_database/Capture.png" width="650" height="500"/>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-badge info">
+                                <i class="fa fa-save"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title"><b>Mô Hình Quan hệ</b></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <img src="~/Content/img_database/Capture1.png" width="650" height="500" />
+                                    <hr>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-gear"></i> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="#">Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Another action</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Something else here</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="#">Separated link</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi fuga odio
+                                        quibusdam. Iure expedita, incidunt unde quis nam! Quod, quisquam.
+                                        Officia
+                                        quam qui adipisci quas consequuntur nostrum sequi. Consequuntur,
+                                        commodi.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-badge success">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt
+                                        obcaecati,
+                                        quaerat tempore officia voluptas debitis consectetur culpa amet,
+                                        accusamus
+                                        dolorum fugiat, animi dicta aperiam, enim incidunt quisquam maxime neque
+                                        eaque.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>

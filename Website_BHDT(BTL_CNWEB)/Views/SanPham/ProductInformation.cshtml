@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "ProductInformation";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@using Website_BHDT_BTL_CNWEB_.Models.MD_Entities;
+@model  SanPham
+<body>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Chi Tiết Sản Phẩm</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <b>@Model.TenSanPham</b>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <img src="@Model.Anh" />
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <b>Thông Tin Sản Phẩm</b>
+                            <a class="btn btn-block btn-social btn-facebook" href="/SanPham/Edit_SanPham/?IDSanPham=@Model.IDSanPham">
+                                <i class="fa fa-edit"></i> Sửa
+                            </a>
+                        </div>
+                       
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tên Sản Phẩm:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.TenSanPham">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đơn Vị Tính:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.DVT">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Số Lượng Tồn:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.SoLuongTon">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đơn Giá Nhập:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.DonGiaN">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đơn Giá Bán:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.DonGiaB">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thời Gian Bảo Hành:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.TGBaoHanh">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hãng:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.Hang">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Xuất Xứ:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.XuatXu">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Màn Hình:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.MaHinh">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hệ Điều Hành:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.HeDieuHanh">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Camera Sau:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.CameraSau">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Camera Trước:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.CameraTruoc">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CPU:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.CPU">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RAM:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.RAM">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bộ Nhớ Trong:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.BoNhoTrong">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thẻ SIM:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.TheSim">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dung Lượng PIN:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.DungLuongPin">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thiết Kế:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.ThietKe">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tình Trạng:</font></font></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="" value="@Model.TinhTrang">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mô Tả:</font></font></label>
+                                <textarea class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled="">@Model.MoTaSanPham</textarea>
+
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+</body>
+
+

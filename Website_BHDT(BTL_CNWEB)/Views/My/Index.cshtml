@@ -1,0 +1,341 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Website_BHDT_BTL_CNWEB_.Models.MD_Entities;
+@model  List<SanPham>
+<html leng ="vi">
+<body>
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/My/Index"><i class="fa fa-home"></i></a></li>
+                        <li><a href="/My/Shop">Danh Sách Sản Phẩm</a></li>
+                        <li><a href="/My/SingleProduct">Thông Tin Chi Tiết Sản Phẩm</a></li>
+                        <li><a href="/My/Cart">Giỏ Hàng</a></li>
+                        <li><a href="/My/Information">Thông Tin Giao Hàng</a></li>
+                        <li><a href="/My/Contact">Liên Hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider-area">
+        <!-- Slider -->
+        <div class="block-slider block-slider4">
+            <ul class="" id="bxslider-home4">
+                <li>
+                    <img src="/Content/img/h4-slide.png" alt="Slide">
+                    <div class="caption-group">
+                        <h2 class="caption title">
+                            iPhone <span class="primary">6 <strong>Plus</strong></span>
+                        </h2>
+                        <h4 class="caption subtitle">Dual SIM</h4>
+                        <a class="caption button-radius" href="/My/Cart"><span class="icon"></span>Mua Ngay</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="/Content/img/h4-slide2.png" alt="Slide">
+                    <div class="caption-group">
+                        <h2 class="caption title">
+                            by one, get one <span class="primary">50% <strong>off</strong></span>
+                        </h2>
+                        <h4 class="caption subtitle">school supplies & backpacks.*</h4>
+                        <a class="caption button-radius" href="/My/Cart"><span class="icon"></span>Mua Ngay</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="/Content/img/h4-slide3.png" alt="Slide">
+                    <div class="caption-group">
+                        <h2 class="caption title">
+                            Apple <span class="primary">Store <strong>Ipod</strong></span>
+                        </h2>
+                        <h4 class="caption subtitle">Select Item</h4>
+                        <a class="caption button-radius" href="/My/Cart")"><span class="icon"></span>Mua Ngay</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="/Content/img/h4-slide4.png" alt="Slide">
+                    <div class="caption-group">
+                        <h2 class="caption title">
+                            Apple <span class="primary">Store <strong>Ipod</strong></span>
+                        </h2>
+                        <h4 class="caption subtitle">& Phone</h4>
+                        <a class="caption button-radius" href="/My/Cart"><span class="icon"></span>Mua Ngay</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- ./Slider -->
+    </div>
+
+    <div class="promo-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo promo1">
+                        <i class="fa fa-refresh"></i>
+                        <p>Đổi Trả Trong Vòng 30 Ngày</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo promo2">
+                        <i class="fa fa-truck"></i>
+                        <p>Giao Hàng Miễn Phí</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo promo3">
+                        <i class="fa fa-lock"></i>
+                        <p>Thanh Toán An Toàn</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo promo4">
+                        <i class="fa fa-gift"></i>
+                        <p>Sản Phẩm Mới</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End promo area -->
+
+    <div class="maincontent-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="latest-product">
+                        <h2 class="section-title">Sản Phẩm Mới Ra Mắt</h2>
+                        <div class="product-carousel">
+                            @foreach (SanPham sp in Model)
+                            {
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="@sp.Anh" alt="">
+                                        <div class="product-hover">
+                                           
+                                            <a href="~/Views/My/Cart/?ID=@sp.IDSanPham" class="add-to-cart-link">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                Thêm Vào Giỏ
+                           
+                                            </a>
+                                        
+                                                <a href="~/Views/My/SingleProduct/?ID=@sp.IDSanPham" class="view-details-link">
+                                                    <i class="fa fa-link"></i>
+                                                    Xem Chi Tiết
+                                                   
+                                                </a>
+                                          
+
+                                        </div>
+                                    </div>
+                                    <h2><a href="~/Views/My/SingleProduct/?ID=@sp.IDSanPham">@sp.TenSanPham</a></h2>
+                                    <div class="product-carousel-price">
+                                        <ins>@sp.DonGiaN</ins> <del>@sp.DonGiaB</del>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End main content area -->
+
+    <div class="brands-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="brand-wrapper">
+                        <div class="brand-list">
+                            <img src="/Content/img/brand1.png" alt="">
+                            <img src="/Content/img/brand3.png" alt="">
+                            <img src="/Content/img/brand4.png" alt="">
+                            <img src="/Content/img/brand5.png" alt="">
+                            <img src="/Content/img/brand6.png" alt="">
+                            <img src="/Content/img/brand5.png" alt="">
+                            <img src="/Content/img/brand1.png" alt="">
+                            <img src="/Content/img/brand2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End brands area -->
+
+    <div class="product-widget-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="single-product-widget">
+                        <h2 class="product-wid-title">Top bán chạy nhất</h2>
+                        <a href="/My/Shop" class="wid-view-more">Xem Tất Cả </a>
+                      
+
+                        
+                            <div class="single-wid-product">
+                                <a href="~/Views/My/SingleProduct/?ID=SP04">Điện thoại iPhone X Cũ (64GB, 256GB) - FullBox<img src="/Content/img/iphone-x-white.jpg" alt="" class="product-thumb"></a>
+                                <h2><a href="/My/SingleProduct"></a></h2>
+                                <div class="product-wid-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product-wid-price">
+                                    <ins></ins>14950000<del>14950000</del>
+                                </div>
+                            </div>
+                          
+
+                        <div class="single-wid-product">
+                            <a href="/My/SingleProduct"><img src="/Content/img/note-9.jpg" alt="" class="product-thumb"></a>
+                            <h2><a href="/My/SingleProduct">Điện thoại Samsung Galaxy Note 9 </a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-wid-price">
+                                <ins>11450000</ins> <del>16450000</del>
+                            </div>
+                        </div>
+
+
+
+                        <div class="single-wid-product">
+                            <a href="/My/SingleProduct"><img src="/Content/img/xiaomi-mi9.jpg" alt="" class="product-thumb"></a>
+                            <h2><a href="/My/SingleProduct">Điện thoại Xiaomi Mi 9 (RAM 6GB, 8GB)</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-wid-price">
+                                <ins>10950000</ins> <del>1295000</del>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-product-widget">
+                        <h2 class="product-wid-title">Đã xem gần đây</h2>
+                        <a href="/My/Shop" class="wid-view-more">Xem Tất Cả </a>
+                        <div class="single-wid-product">
+                            <a href="/My/SingleProduct"><img src="/Content/img/x7-do.jpg" alt="" class="product-thumb"></a>
+                            <h2><a href="/My/SingleProduct">Điện thoại Nokia X7 2018</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-wid-price">
+                                <ins>5450000</ins> <del>5950000</del>
+                            </div>
+                        </div>
+                        <div class="single-wid-product">
+                            <a href="/My/SingleProduct"><img src="/Content/img/samsung-galaxy-s9-plus-cu-black.jpg" alt="" class="product-thumb"></a>
+                            <h2><a href="/My/SingleProduct">Điện thoại Samsung Galaxy S9 Plus Nhật Bản</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-wid-price">
+                                <ins>10250000</ins> <del>10950000</del>
+                            </div>
+                        </div>
+                        <div class="single-wid-product">
+                            <a href="/My/SingleProduct"><img src="/Content/img/iphone-se-pink.jpg" alt="" class="product-thumb"></a>
+                            <h2><a href="/My/SingleProduct">Điện thoại iPhone SE cũ - Fullbox</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-wid-price">
+                                <ins>2450000</ins> <del>3000000</del>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-product-widget">
+                        <h2 class="product-wid-title">Top Sản Phẩm Mới</h2>
+                        <a href="/My/Shop" class="wid-view-more">Xem Tất Cả</a>
+                        <div class="single-wid-product">
+                            <a href="/My/SingleProduct"><img src="/Content/img/xiaomi-mi-mix2-den.jpg" alt="" class="product-thumb"></a>
+                            <h2><a href="/My/SingleProduct">Điện thoại Xiaomi Mi Mix 2 (ROM Tiếng Việt)</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-wid-price">
+                                <ins>7450000</ins> <del>8450000</del>
+                            </div>
+                        </div>
+                        <div class="single-wid-product">
+                            <a href="/My/SingleProduct"><img src="/Content/img/iphone-x-white.jpg" alt="" class="product-thumb"></a>
+                            <h2><a href="/My/SingleProduct">Điện thoại iPhone X Cũ (64GB, 256GB) - FullBox</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-wid-price">
+                                <ins>14950000</ins> <del>16450000</del>
+                            </div>
+                        </div>
+                        <div class="single-wid-product">
+                            <a href="/My/SingleProduct"><img src="/Content/img/x7-do.jpg" alt="" class="product-thumb"></a>
+                            <h2><a href="/My/SingleProduct">Điện thoại Nokia X7 2018</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-wid-price">
+                                <ins>5450000</ins> <del>5950000</del>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End product widget area -->
+</body>
+</html>
+

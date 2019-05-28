@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "NguoiDung";
+    Layout = "~/Views/Shared/_LayoutNguoiDung.cshtml";
+}
+@using Website_BHDT_BTL_CNWEB_.Models.MD_Entities;
+@model  KhachHang
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Hồ Sơ</h1>
+                @*Biểu tượng người*@
+            </div>
+            <div class="hero-widget well well-sm">
+                <div class="icon">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="text">
+                    <span class="value"><i class="fa fa-github-alt"></i>@Model.IDKhachHang</span>
+
+                </div>
+
+            </div>
+            @*Đổi Mật Khẩu*@
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <i class="fa fa-edit"></i>    Đổi Mật Khẩu
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="form-group">
+                        <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mật Khẩu Cũ:</font></font></label>
+                        <input class="form-control" placeholder="old password">
+                    </div>
+                    <div class="form-group">
+                        <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mật Mới:</font></font></label>
+                        <input class="form-control" placeholder="new password">
+                    </div>
+                    <div class="form-group">
+                        <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nhập Lại Mật Khẩu:</font></font></label>
+                        <input class="form-control" placeholder="password again">
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline btn-primary btn-lg btn-block"><font style="vertical-align: inherit;"> <font style="vertical-align: inherit;"><i class="fa fa-save"></i>    Lưu</font></font></button>
+                    </div>
+
+                </div>
+
+            </div>
+            @*Thông Tin người dùng*@
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <i class="fa fa-outdent"></i>   Thông Tin
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="form-group">
+                        <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tên Tài Khoản:</font></font></label>
+                        <input class="form-control" placeholder="Chú ý: tên tài khoản không quá 10 kí tự,tên bao gồm cả chữ và số.">
+                    </div>
+                    <div class="form-group">
+                        <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giới Tính:</font></font></label>
+                        <input class="form-control" placeholder="giới tính">
+                    </div>
+                    <div class="form-group">
+                        <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Số Điện Thoại:</font></font></label>
+                        <input class="form-control" placeholder="số điện thoại">
+                    </div>
+                    <div class="form-group">
+                        <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Địa Chỉ:</font></font></label>
+                        <input class="form-control" placeholder="địa chỉ">
+                    </div>
+                    <div class="form-group">
+                        <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Quận/Huyện:</font></font></label>
+                        <input class="form-control" placeholder="quận - huyện">
+                    </div>
+                    <div class="form-group">
+                        <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thành Phố:</font></font></label>
+                        <input class="form-control" placeholder="thành phố">
+                    </div>
+                    <div class="form-group">
+                        <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tên Công Ty:</font></font></label>
+                        <input class="form-control" placeholder="tên công ty">
+                    </div>
+                    <div class="form-group">
+                        <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Địa chỉ Email:</font></font></label>
+                        <input class="form-control" placeholder="Email">
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline btn-primary btn-lg btn-block"><font style="vertical-align: inherit;"> <font style="vertical-align: inherit;"><i class="fa fa-save"></i>    Cập Nhật Thông Tin Của Bạn</font></font></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "cart";
+    Layout = "~/Views/Shared/_LayoutNguoiDung.cshtml";
+}
+@using Website_BHDT_BTL_CNWEB_.Models.MD_Entities;
+@model  List<SanPham>
+
+    <body>
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Giỏ Hàng Của Bạn</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                    @foreach(SanPham sp in Model)
+                    {
+                    <div class="col-lg-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                @sp.TenSanPham
+                            </div>
+                            <div class="panel-body">
+                                <img src="@sp.Anh" width="200" height="200" /><br />
+                                <a href="javascript:;" class="btn btn-default btn-lg"><i class="fa fa-credit-card-alt">Thanh Toán</i></a>
+                                <a href="javascript:;" class="btn btn-default btn-lg"><i class="fa fa-trash">Xóa Sản Phẩm</i></a>
+                            </div>
+                            <div class="panel-footer">
+                                <b>Giá Bán:</b>@sp.DonGiaB<i class="fa fa-dollar"> </i>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    }
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+
+    </body>
+
